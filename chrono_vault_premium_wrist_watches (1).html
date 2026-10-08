@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrono Vault | Premium Wrist Watches India</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                        },
+                        amber: {
+                            900: '#451a03',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #ca8a04;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col custom-scrollbar">
+
+    <div class="bg-gradient-to-r from-amber-700 via-gold-600 to-amber-700 text-slate-950 text-xs sm:text-sm font-semibold py-2 px-4 text-center tracking-wide">
+        <i class="fa-solid fa-gift mr-2"></i> Festive Season Sale: Get Extra 10% Off with Code <span class="bg-slate-950 text-gold-400 px-2 py-0.5 rounded font-mono uppercase">TIME10</span> | Free Express Delivery Across India!
+    </div>
+
+    <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-gold-600 via-amber-500 to-yellow-300 p-0.5 shadow-lg group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-slate-950 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-clock text-gold-400 text-xl group-hover:rotate-12 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-serif font-bold tracking-wider text-white">CHRONO<span class="text-gold-400">VAULT</span></span>
+                        <span class="block text-[10px] tracking-widest text-slate-400 uppercase -mt-1">Luxury Horology</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#hero-slider" class="text-slate-300 hover:text-gold-400 transition-colors">Home</a>
+                    <a href="#shop" class="text-slate-300 hover:text-gold-400 transition-colors">Collection</a>
+                    <a href="#features" class="text-slate-300 hover:text-gold-400 transition-colors">Why Us</a>
+                    <a href="#about" class="text-slate-300 hover:text-gold-400 transition-colors">About Us</a>
+                    <a href="#contact" class="text-slate-300 hover:text-gold-400 transition-colors">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <!-- Wishlist Button -->
+                    <button id="wishlist-btn" onclick="toggleWishlistModal()" class="relative p-2.5 text-slate-300 hover:text-gold-400 transition-colors rounded-full hover:bg-slate-800" title="Wishlist">
+                        <i class="fa-regular fa-heart text-xl"></i>
+                        <span id="wishlist-badge" class="absolute top-1 right-1 bg-red-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center hidden">0</span>
+                    </button>
+
+                    <!-- Cart Button -->
+                    <button id="cart-btn" onclick="toggleCartDrawer()" class="relative p-2.5 text-slate-300 hover:text-gold-400 transition-colors rounded-full hover:bg-slate-800 flex items-center gap-2" title="Shopping Cart">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span id="cart-badge" class="absolute top-1 right-1 bg-gold-500 text-slate-950 text-[10px] font-extrabold rounded-full w-5 h-5 flex items-center justify-center shadow">0</span>
+                    </button>
+
+                    <!-- Mobile Navigation Toggle -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#hero-slider" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-400 py-2">Home</a>
+            <a href="#shop" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-400 py-2">Collection</a>
+            <a href="#features" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-400 py-2">Why Us</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-400 py-2">About Us</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-400 py-2">Contact</a>
+        </div>
+    </header>
+
+    <section id="hero-slider" class="relative bg-slate-900 overflow-hidden min-h-[500px] md:min-h-[580px] flex items-center">
+        <!-- Hero Slide 1 -->
+        <div class="slide-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100 flex items-center" data-slide="0">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=1600&auto=format&fit=crop');">
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 w-full">
+                <span class="inline-block px-3 py-1 bg-gold-500/20 text-gold-400 border border-gold-500/30 rounded-full text-xs font-semibold uppercase tracking-widest mb-4">Masterpiece Collection 2026</span>
+                <h1 class="text-4xl sm:text-6xl font-serif font-bold text-white max-w-2xl leading-tight mb-4">Timeless Elegance On Your Wrist</h1>
+                <p class="text-slate-300 text-base sm:text-lg max-w-xl mb-8">Discover handcrafted Swiss automatic and Japanese quartz timepieces engineered with unmatched precision and legacy aesthetic.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#shop" class="bg-gold-500 hover:bg-gold-600 text-slate-950 font-bold px-8 py-3.5 rounded-lg shadow-lg hover:shadow-gold-500/20 transition-all flex items-center gap-2">
+                        Explore Collection <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#about" class="border border-slate-700 hover:border-gold-400 text-slate-200 hover:text-gold-400 font-medium px-8 py-3.5 rounded-lg transition-all">
+                        Our Heritage
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none flex items-center" data-slide="1">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=1600&auto=format&fit=crop');">
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-transparent"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 w-full">
+                <span class="inline-block px-3 py-1 bg-gold-500/20 text-gold-400 border border-gold-500/30 rounded-full text-xs font-semibold uppercase tracking-widest mb-4">Special Discount Offer</span>
+                <h1 class="text-4xl sm:text-6xl font-serif font-bold text-white max-w-2xl leading-tight mb-4">Up To 40% OFF On Luxury Automatic Chronographs</h1>
+                <p class="text-slate-300 text-base sm:text-lg max-w-xl mb-8">Elevate your personal style with premium sapphire crystal glass and genuine Italian leather strap timepieces at irresistible prices.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#shop" onclick="filterCategory('automatic')" class="bg-gold-500 hover:bg-gold-600 text-slate-950 font-bold px-8 py-3.5 rounded-lg shadow-lg hover:shadow-gold-500/20 transition-all flex items-center gap-2">
+                        Shop Automatic Deals <i class="fa-solid fa-tag text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none flex items-center" data-slide="2">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=1600&auto=format&fit=crop');">
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 w-full">
+                <span class="inline-block px-3 py-1 bg-gold-500/20 text-gold-400 border border-gold-500/30 rounded-full text-xs font-semibold uppercase tracking-widest mb-4">Authentic Warranty</span>
+                <h1 class="text-4xl sm:text-6xl font-serif font-bold text-white max-w-2xl leading-tight mb-4">2-Year International Warranty Included</h1>
+                <p class="text-slate-300 text-base sm:text-lg max-w-xl mb-8">Every watch inside Chrono Vault is 100% original, certified with serial authentication, and delivered with luxury presentation boxes.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#shop" class="bg-gold-500 hover:bg-gold-600 text-slate-950 font-bold px-8 py-3.5 rounded-lg shadow-lg transition-all flex items-center gap-2">
+                        View All Watches <i class="fa-solid fa-shield-halved text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-slate-900/60 hover:bg-gold-500 hover:text-slate-950 border border-slate-700 text-white flex items-center justify-center transition-all">
+            <i class="fa-solid fa-chevron-left text-lg"></i>
+        </button>
+        <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-slate-900/60 hover:bg-gold-500 hover:text-slate-950 border border-slate-700 text-white flex items-center justify-center transition-all">
+            <i class="fa-solid fa-chevron-right text-lg"></i>
+        </button>
+
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
+            <button onclick="goToSlide(0)" class="slide-dot w-8 h-2 rounded-full bg-gold-400 transition-all"></button>
+            <button onclick="goToSlide(1)" class="slide-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-slate-400 transition-all"></button>
+            <button onclick="goToSlide(2)" class="slide-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-slate-400 transition-all"></button>
+        </div>
+    </section>
+
+    <section id="features" class="bg-slate-900 border-y border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4 rounded-xl bg-slate-950/40 border border-slate-800/80">
+                    <div class="w-12 h-12 mx-auto mb-3 text-gold-400 text-2xl flex items-center justify-center bg-gold-500/10 rounded-full">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-sm sm:text-base">Free Pan-India Delivery</h4>
+                    <p class="text-xs text-slate-400 mt-1">Dispatched within 24 hours</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-950/40 border border-slate-800/80">
+                    <div class="w-12 h-12 mx-auto mb-3 text-gold-400 text-2xl flex items-center justify-center bg-gold-500/10 rounded-full">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-sm sm:text-base">100% Original Guarantee</h4>
+                    <p class="text-xs text-slate-400 mt-1">Verified serial numbers</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-950/40 border border-slate-800/80">
+                    <div class="w-12 h-12 mx-auto mb-3 text-gold-400 text-2xl flex items-center justify-center bg-gold-500/10 rounded-full">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-sm sm:text-base">2-Year International Warranty</h4>
+                    <p class="text-xs text-slate-400 mt-1">Hassle-free coverage</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-950/40 border border-slate-800/80">
+                    <div class="w-12 h-12 mx-auto mb-3 text-gold-400 text-2xl flex items-center justify-center bg-gold-500/10 rounded-full">
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-sm sm:text-base">14-Day Easy Returns</h4>
+                    <p class="text-xs text-slate-400 mt-1">Full refund option</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-slate-800 gap-4">
+            <div>
+                <span class="text-gold-400 font-semibold text-xs uppercase tracking-widest">Handcrafted Perfection</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-1">Curated Wristwatch Collection</h2>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3">
+                <div class="relative">
+                    <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Search watches..." 
+                           class="bg-slate-900 border border-slate-700 text-slate-200 text-sm rounded-lg pl-9 pr-4 py-2 focus:outline-none focus:border-gold-400 w-40 sm:w-56">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-500 text-xs"></i>
+                </div>
+
+                <select id="category-filter" onchange="applyFilters()" class="bg-slate-900 border border-slate-700 text-slate-200 text-sm rounded-lg px-3 py-2 focus:outline-none focus:border-gold-400">
+                    <option value="all">All Categories</option>
+                    <option value="automatic">Automatic</option>
+                    <option value="chronograph">Chronograph</option>
+                    <option value="classic">Classic Minimalist</option>
+                    <option value="diver">Sports & Diver</option>
+                    <option value="smart">Luxury Smart</option>
+                </select>
+
+                <select id="sort-filter" onchange="applyFilters()" class="bg-slate-900 border border-slate-700 text-slate-200 text-sm rounded-lg px-3 py-2 focus:outline-none focus:border-gold-400">
+                    <option value="featured">Sort: Featured</option>
+                    <option value="low-high">Price: Low to High</option>
+                    <option value="high-low">Price: High to Low</option>
+                    <option value="discount">Highest Discount</option>
+                    <option value="rating">Top Rated</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+            <!-- Dynamic JavaScript injection of 15 watch products -->
+        </div>
+
+        <div id="no-results" class="hidden text-center py-16">
+            <i class="fa-solid fa-ghost text-5xl text-slate-600 mb-4"></i>
+            <h3 class="text-xl font-bold text-white">No Watches Match Your Filter</h3>
+            <p class="text-slate-400 text-sm mt-1">Try resetting your search query or selecting a different category.</p>
+            <button onclick="resetFilters()" class="mt-4 bg-gold-500 text-slate-950 font-bold px-6 py-2 rounded-lg text-sm hover:bg-gold-600">Reset Filters</button>
+        </div>
+    </section>
+
+    <section id="about" class="bg-slate-900 border-t border-slate-800 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop" 
+                             alt="Horology Craftsmanship Watch" 
+                             class="w-full h-[420px] object-cover"
+                             onerror="this.src='https://placehold.co/800x500/1e293b/ffffff?text=Chrono+Vault+Wristwatch'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-slate-950 border border-gold-500/40 p-6 rounded-2xl shadow-2xl hidden sm:block">
+                        <span class="text-3xl font-serif font-bold text-gold-400">15+ Years</span>
+                        <p class="text-slate-300 text-xs font-medium uppercase tracking-wider mt-1">Of Horological Excellence</p>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-gold-400 font-semibold text-xs uppercase tracking-widest">Our Story & Legacy</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2 mb-6">Crafting Timepieces for the Discerning Individual</h2>
+                    <p class="text-slate-300 leading-relaxed mb-4 text-sm sm:text-base">
+                        Founded in 2011, <strong>Chrono Vault</strong> stands as India's premier destination for fine wristwatches. We believe that a wristwatch is not merely a tool to mark time; it is a profound declaration of style, ambition, and personal heritage.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed mb-8 text-sm">
+                        Each watch in our vault is rigorously inspected for mechanical accuracy, structural authenticity, and water-resistance integrity. Partnering with elite master watchmakers across Switzerland and Japan, we bring world-class horology straight to watch enthusiasts across India.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-4 border-t border-slate-800 pt-6">
+                        <div>
+                            <h4 class="text-2xl font-bold text-gold-400">12,500+</h4>
+                            <p class="text-xs text-slate-400">Watches Delivered</p>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold text-gold-400">100%</h4>
+                            <p class="text-xs text-slate-400">Authentic Certified</p>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold text-gold-400">4.9 / 5</h4>
+                            <p class="text-xs text-slate-400">Customer Rating</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-gold-400 font-semibold text-xs uppercase tracking-widest">We Are Here For You</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-1">Get in Touch with Our Watch Concierge</h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">Have questions about watch specifications, custom strap fits, or delivery inquiries? Drop us a message!</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Contact Details Card -->
+                <div class="space-y-6">
+                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center shrink-0 text-xl">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Direct Email</h4>
+                            <p class="text-slate-400 text-xs mt-1">Send us your queries directly:</p>
+                            <a href="mailto:nagdamann05@gmail.com" class="text-gold-400 font-medium text-sm hover:underline block mt-1">nagdamann05@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center shrink-0 text-xl">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Customer Support</h4>
+                            <p class="text-slate-400 text-xs mt-1">Mon - Sat: 10:00 AM - 7:00 PM IST</p>
+                            <a href="tel:+919876543210" class="text-slate-200 text-sm hover:text-gold-400 block mt-1">+91 98765 43210</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center shrink-0 text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Flagship Experience Center</h4>
+                            <p class="text-slate-400 text-xs mt-1">Suite 402, Luxury Horology Hub, Bandra Kurla Complex (BKC), Mumbai, Maharashtra - 400051</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Name</label>
+                                <input type="text" required placeholder="e.g. Mann Nagda" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-gold-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Email</label>
+                                <input type="email" required placeholder="nagdamann05@gmail.com" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-gold-400">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Phone Number</label>
+                                <input type="tel" placeholder="+91 90000 00000" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-gold-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Inquiry Type</label>
+                                <select class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-gold-400">
+                                    <option>Watch Product Advice</option>
+                                    <option>Order & Tracking</option>
+                                    <option>Warranty & Servicing</option>
+                                    <option>Bulk / Corporate Gifting</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Message</label>
+                            <textarea rows="4" required placeholder="Tell us how we can assist you with your watch purchase..." class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-gold-400"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-slate-950 font-bold py-3.5 rounded-lg transition-all shadow-lg text-sm uppercase tracking-wider flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 pt-16 pb-8 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500 flex items-center justify-center text-slate-950 font-bold">
+                            <i class="fa-solid fa-clock text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-serif font-bold text-white tracking-wider">CHRONO<span class="text-gold-400">VAULT</span></span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+                        Chrono Vault is India's leading online sanctuary for certified premium timepieces. Delivering mechanical mastery and luxury design to your doorstep.
+                    </p>
+                    <p class="text-xs text-slate-300">
+                        <i class="fa-solid fa-envelope text-gold-400 mr-2"></i> Official Support: <a href="mailto:nagdamann05@gmail.com" class="text-gold-400 hover:underline">nagdamann05@gmail.com</a>
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold mb-4 text-xs uppercase tracking-widest">Collections</h5>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#shop" onclick="filterCategory('automatic')" class="hover:text-gold-400">Automatic Mechanical</a></li>
+                        <li><a href="#shop" onclick="filterCategory('chronograph')" class="hover:text-gold-400">Chronograph Editions</a></li>
+                        <li><a href="#shop" onclick="filterCategory('classic')" class="hover:text-gold-400">Classic Leather Minimalist</a></li>
+                        <li><a href="#shop" onclick="filterCategory('diver')" class="hover:text-gold-400">Professional Diver Series</a></li>
+                        <li><a href="#shop" onclick="filterCategory('smart')" class="hover:text-gold-400">Luxury Smartwatches</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold mb-4 text-xs uppercase tracking-widest">Customer Care</h5>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#features" class="hover:text-gold-400">Shipping Policy</a></li>
+                        <li><a href="#features" class="hover:text-gold-400">Return & Exchange</a></li>
+                        <li><a href="#features" class="hover:text-gold-400">Warranty Registration</a></li>
+                        <li><a href="#contact" class="hover:text-gold-400">Authenticity Certificate</a></li>
+                        <li><a href="#contact" class="hover:text-gold-400">Watch Care Guide</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold mb-4 text-xs uppercase tracking-widest">Join VIP Club</h5>
+                    <p class="text-xs text-slate-400 mb-3">Subscribe for exclusive watch launch invites and extra discount codes.</p>
+                    <div class="space-y-2">
+                        <input type="email" placeholder="Enter your email..." class="w-full bg-slate-900 border border-slate-800 rounded px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-gold-400">
+                        <button onclick="handleSubscribe()" class="w-full bg-gold-500 hover:bg-gold-600 text-slate-950 font-bold py-2 rounded text-xs transition-colors">
+                            Subscribe Now
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-900 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Chrono Vault India. All Rights Reserved. Contact: <a href="mailto:nagdamann05@gmail.com" class="text-slate-400 underline">nagdamann05@gmail.com</a></p>
+                <div class="flex items-center space-x-4 text-slate-400 text-lg">
+                    <i class="fa-brands fa-cc-visa hover:text-white transition-colors" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard hover:text-white transition-colors" title="Mastercard"></i>
+                    <i class="fa-solid fa-mobile-screen-button hover:text-white transition-colors" title="UPI Payment"></i>
+                    <i class="fa-solid fa-shield-halved hover:text-white transition-colors" title="SSL Secure 256-Bit"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="quickview-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl relative max-h-[90vh] overflow-y-auto custom-scrollbar">
+            <button onclick="closeQuickView()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="quickview-content" class="p-6 sm:p-8">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <div id="wishlist-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-xl w-full p-6 shadow-2xl relative">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-heart text-red-500"></i> Saved Wishlist
+                </h3>
+                <button onclick="toggleWishlistModal()" class="text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div id="wishlist-items-container" class="py-4 max-h-[60vh] overflow-y-auto space-y-3 custom-scrollbar">
+                <!-- Wishlist items injected here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-slate-950/70 backdrop-blur-xs transition-opacity"></div>
+        
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-slate-900 border-l border-slate-800 shadow-2xl flex flex-col">
+                
+                <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-gold-400 text-xl"></i>
+                        <h3 class="text-lg font-bold text-white">Your Shopping Cart</h3>
+                    </div>
+                    <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-white p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
+                    <!-- Dynamic rendering -->
+                </div>
+
+                <div class="p-6 border-t border-slate-800 bg-slate-950 space-y-4">
+                    <div class="flex gap-2">
+                        <input type="text" id="coupon-input" placeholder="Promo code (e.g. TIME10)" class="flex-1 bg-slate-900 border border-slate-700 text-xs text-slate-200 px-3 py-2 rounded focus:outline-none focus:border-gold-400 uppercase">
+                        <button onclick="applyCoupon()" class="bg-slate-800 hover:bg-gold-500 hover:text-slate-950 text-slate-200 text-xs font-bold px-4 py-2 rounded transition-colors">Apply</button>
+                    </div>
+                    <div id="coupon-message" class="text-xs hidden"></div>
+
+                    <div class="space-y-1.5 text-xs">
+                        <div class="flex justify-between text-slate-400">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal" class="text-slate-200 font-semibold">₹0</span>
+                        </div>
+                        <div class="flex justify-between text-slate-400">
+                            <span>Discount Savings</span>
+                            <span id="cart-discount" class="text-emerald-400 font-semibold">- ₹0</span>
+                        </div>
+                        <div class="flex justify-between text-slate-400">
+                            <span>GST & Insurance (Incl.)</span>
+                            <span class="text-slate-300">Free</span>
+                        </div>
+                        <div class="flex justify-between text-slate-400">
+                            <span>Pan-India Delivery</span>
+                            <span class="text-emerald-400 font-semibold">FREE</span>
+                        </div>
+                        <div class="flex justify-between text-base font-bold text-white border-t border-slate-800 pt-2 mt-2">
+                            <span>Total Payable</span>
+                            <span id="cart-total" class="text-gold-400">₹0</span>
+                        </div>
+                    </div>
+
+                    <button onclick="openCheckoutModal()" class="w-full bg-gold-500 hover:bg-gold-600 text-slate-950 font-bold py-3.5 rounded-lg shadow-lg text-sm transition-all flex items-center justify-center gap-2">
+                        Proceed To Secure Checkout <i class="fa-solid fa-lock text-xs"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-sm hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto custom-scrollbar">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <h3 class="text-2xl font-serif font-bold text-white mb-1">Complete Your Order</h3>
+            <p class="text-xs text-slate-400 mb-6">Enter delivery details for instant shipping dispatch.</p>
+
+            <form onsubmit="handleOrderSubmit(event)" class="space-y-4 text-xs">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-slate-300 mb-1">First Name</label>
+                        <input type="text" required class="w-full bg-slate-950 border border-slate-700 rounded p-2.5 text-white">
+                    </div>
+                    <div>
+                        <label class="block text-slate-300 mb-1">Last Name</label>
+                        <input type="text" required class="w-full bg-slate-950 border border-slate-700 rounded p-2.5 text-white">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-slate-300 mb-1">Shipping Address</label>
+                    <input type="text" required placeholder="House No, Street, Landmark" class="w-full bg-slate-950 border border-slate-700 rounded p-2.5 text-white">
+                </div>
+
+                <div class="grid grid-cols-3 gap-3">
+                    <div>
+                        <label class="block text-slate-300 mb-1">City</label>
+                        <input type="text" required class="w-full bg-slate-950 border border-slate-700 rounded p-2.5 text-white">
+                    </div>
+                    <div>
+                        <label class="block text-slate-300 mb-1">State</label>
+                        <input type="text" required class="w-full bg-slate-950 border border-slate-700 rounded p-2.5 text-white">
+                    </div>
+                    <div>
+                        <label class="block text-slate-300 mb-1">Pincode</label>
+                        <input type="text" required pattern="[0-9]{6}" placeholder="400001" class="w-full bg-slate-950 border border-slate-700 rounded p-2.5 text-white">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-slate-300 mb-1">Payment Options</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <label class="border border-slate-700 p-3 rounded text-center cursor-pointer hover:border-gold-400 block">
+                            <input type="radio" name="payment" value="UPI" checked class="hidden peer">
+                            <div class="peer-checked:text-gold-400 font-semibold">UPI / GPay</div>
+                        </label>
+                        <label class="border border-slate-700 p-3 rounded text-center cursor-pointer hover:border-gold-400 block">
+                            <input type="radio" name="payment" value="Card" class="hidden peer">
+                            <div class="peer-checked:text-gold-400 font-semibold">Credit/Debit</div>
+                        </label>
+                        <label class="border border-slate-700 p-3 rounded text-center cursor-pointer hover:border-gold-400 block">
+                            <input type="radio" name="payment" value="COD" class="hidden peer">
+                            <div class="peer-checked:text-gold-400 font-semibold">Cash On Delivery</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-800 pt-4 flex justify-between items-center text-sm">
+                    <span class="text-slate-300 font-semibold">Final Amount:</span>
+                    <span id="checkout-final-price" class="text-gold-400 font-bold text-lg">₹0</span>
+                </div>
+
+                <button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-slate-950 font-bold py-3.5 rounded-lg text-sm mt-4 uppercase tracking-wider">
+                    Confirm Order & Pay
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-sm hidden">
+        <div class="bg-slate-900 border border-gold-500/30 rounded-2xl max-w-md w-full p-8 shadow-2xl text-center">
+            <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-500/30">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-white mb-2">Order Confirmed!</h3>
+            <p class="text-slate-300 text-sm mb-4">Thank you for your purchase with Chrono Vault.</p>
+            <div class="bg-slate-950 p-4 rounded-xl text-left text-xs text-slate-400 space-y-1 mb-6 border border-slate-800">
+                <p><span class="text-slate-200">Order ID:</span> <span id="order-id" class="font-mono text-gold-400">#CV-98214</span></p>
+                <p><span class="text-slate-200">Support Email:</span> nagdamann05@gmail.com</p>
+                <p><span class="text-slate-200">Estimated Delivery:</span> 3 - 5 Business Days</p>
+            </div>
+            <button onclick="closeSuccessModal()" class="w-full bg-gold-500 hover:bg-gold-600 text-slate-950 font-bold py-3 rounded-lg text-sm">
+                Continue Shopping
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification Banner -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-slate-900 border border-gold-500/50 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-gold-400 text-lg"></i>
+        <span id="toast-message" class="text-xs sm:text-sm font-medium">Item added to cart!</span>
+    </div>
+
+    <script>
+        // WATCH DATA CATALOG (15 items - ALL 100% Verified Wristwatch Images)
+        const watches = [
+            {
+                id: 1,
+                name: "Chrono Royal Oak Automatic",
+                brand: "Vault Masterpiece",
+                category: "automatic",
+                price: 24999,
+                originalPrice: 34999,
+                discount: 28,
+                rating: 4.9,
+                reviews: 142,
+                image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600&auto=format&fit=crop",
+                badge: "Best Seller",
+                movement: "Swiss Self-Winding Automatic (Calibre V-8)",
+                caseMaterial: "316L Surgical Stainless Steel",
+                waterResistance: "100 Meters / 10 ATM",
+                glass: "Anti-reflective Scratch Resistant Sapphire Crystal",
+                strap: "Integrated Brushed Steel Bracelet",
+                description: "An iconic octagonal bezel design paired with a grand tapisserie textured dial. Self-winding mechanism with a 48-hour power reserve."
+            },
+            {
+                id: 2,
+                name: "Monaco Obsidian Chronograph",
+                brand: "Apex Horology",
+                category: "chronograph",
+                price: 18490,
+                originalPrice: 24990,
+                discount: 26,
+                rating: 4.8,
+                reviews: 98,
+                image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&auto=format&fit=crop",
+                badge: "Hot Deal",
+                movement: "Precision Quartz Chronograph",
+                caseMaterial: "Matte Black PVD Coated Stainless Steel",
+                waterResistance: "50 Meters / 5 ATM",
+                glass: "Mineral Hardlex Crystal",
+                strap: "Perforated Racing Leather Strap",
+                description: "Designed for motor racing enthusiasts. Features sub-second stopwatches, tachymeter scale bezel, and luminous hands."
+            },
+            {
+                id: 3,
+                name: "Heritage Vintage Classic Leather",
+                brand: "Chrono Vault",
+                category: "classic",
+                price: 8999,
+                originalPrice: 12999,
+                discount: 30,
+                rating: 4.7,
+                reviews: 215,
+                image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop",
+                badge: "Classic Choice",
+                movement: "Japanese Quartz Calibre",
+                caseMaterial: "Polished Rose Gold Plated Steel",
+                waterResistance: "30 Meters / 3 ATM",
+                glass: "Dome Sapphire Crystal",
+                strap: "Handcrafted Top-Grain Italian Leather",
+                description: "Subtle luxury for formal meetings and evening occasions. Minimalist sunburst dial with slim profile case."
+            },
+            {
+                id: 4,
+                name: "Submariner Pro Diver 300M",
+                brand: "Oceanic Vault",
+                category: "diver",
+                price: 32999,
+                originalPrice: 45000,
+                discount: 26,
+                rating: 5.0,
+                reviews: 84,
+                image: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&auto=format&fit=crop",
+                badge: "Top Rated",
+                movement: "High-Beat Automatic Diver Calibre",
+                caseMaterial: "Surgical Grade Steel",
+                waterResistance: "300 Meters / 30 ATM",
+                glass: "Double-thick Sapphire Glass",
+                strap: "Solid Steel Oyster Bracelet with Extension",
+                description: "Built for deep underwater exploration. Unidirectional rotating ceramic bezel with Super-LumiNova markers."
+            },
+            {
+                id: 5,
+                name: "Aero Minimalist Silver Dial",
+                brand: "Nordic Horology",
+                category: "classic",
+                price: 6499,
+                originalPrice: 9999,
+                discount: 35,
+                rating: 4.6,
+                reviews: 176,
+                image: "https://images.unsplash.com/photo-1547996160-012745cc5836?w=600&auto=format&fit=crop",
+                badge: "Value Pick",
+                movement: "Slim-line Quartz Calibre",
+                caseMaterial: "Brushed Stainless Steel",
+                waterResistance: "30 Meters",
+                glass: "Hardened Mineral Crystal",
+                strap: "Mesh Steel Milanese Strap",
+                description: "Ultra-thin 7mm profile watch featuring clean minimalist hour markers and a quick-release magnetic mesh strap."
+            },
+            {
+                id: 6,
+                name: "Gold Emperor Tourbillon Edition",
+                brand: "Vault Grandeur",
+                category: "automatic",
+                price: 54999,
+                originalPrice: 75000,
+                discount: 26,
+                rating: 4.9,
+                reviews: 32,
+                image: "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=600&auto=format&fit=crop",
+                badge: "Limited Edition",
+                movement: "Exposed Skeleton Mechanical Automatic",
+                caseMaterial: "18K Gold PVD Stainless Steel",
+                waterResistance: "50 Meters",
+                glass: "Curved Sapphire Crystal",
+                strap: "Crocodile Pattern Leather Strap",
+                description: "A showpiece of watchmaking artistry. Open skeleton heart dial displaying intricate gearwheel balance spring movements."
+            },
+            {
+                id: 7,
+                name: "Titanium Field Explorer Tactical",
+                brand: "Apex Horology",
+                category: "diver",
+                price: 14999,
+                originalPrice: 19999,
+                discount: 25,
+                rating: 4.8,
+                reviews: 64,
+                image: "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=600&auto=format&fit=crop",
+                badge: "Rugged",
+                movement: "Solar Powered Tough Movement",
+                caseMaterial: "Grade 2 Solid Titanium",
+                waterResistance: "200 Meters",
+                glass: "Sapphire Crystal",
+                strap: "Ballistic Nylon NATO Strap",
+                description: "Featherweight yet indestructible titanium case built for extreme outdoors, military operations, and survival."
+            },
+            {
+                id: 8,
+                name: "Smart Luxe Connected Horizon",
+                brand: "TechChrono",
+                category: "smart",
+                price: 19999,
+                originalPrice: 29999,
+                discount: 33,
+                rating: 4.7,
+                reviews: 110,
+                image: "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=600&auto=format&fit=crop",
+                badge: "Smart Tech",
+                movement: "AMOLED Hybrid Smart Engine",
+                caseMaterial: "Aerospace Aluminum Alloy",
+                waterResistance: "IP68 / 50M",
+                glass: "Gorilla Glass DX+",
+                strap: "Fluoroelastomer Sports Band",
+                description: "Blends luxury watch styling with AMOLED touchscreen display, ECG heart monitoring, GPS tracking, and 7-day battery life."
+            },
+            {
+                id: 9,
+                name: "Skeleton Mechanical Bronze Age",
+                brand: "Vault Masterpiece",
+                category: "automatic",
+                price: 28999,
+                originalPrice: 38999,
+                discount: 25,
+                rating: 4.9,
+                reviews: 51,
+                image: "https://images.unsplash.com/photo-1511370235399-1802cae1d32f?w=600&auto=format&fit=crop",
+                badge: "Hand Crafted",
+                movement: "Hand-Winding Mechanical Calibre",
+                caseMaterial: "Aged Patina Bronze Alloy",
+                waterResistance: "50 Meters",
+                glass: "Sapphire Crystal",
+                strap: "Distressed Vintage Calfskin",
+                description: "Features a bronze case that develops a unique patina over time, making every single watch truly one-of-a-kind."
+            },
+            {
+                id: 10,
+                name: "Lady Diamond Rose Executive",
+                brand: "Chrono Vault",
+                category: "classic",
+                price: 16999,
+                originalPrice: 22999,
+                discount: 26,
+                rating: 4.9,
+                reviews: 89,
+                image: "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=600&auto=format&fit=crop",
+                badge: "Women's Luxe",
+                movement: "Swiss Quartz Calibre",
+                caseMaterial: "Rose Gold with Cubic Zirconia Bezel",
+                waterResistance: "30 Meters",
+                glass: "Sapphire Glass",
+                strap: "Rose Gold Stainless Bracelet",
+                description: "Delicate 32mm mother-of-pearl dial studded with genuine crystal indices for an unmatched graceful shine."
+            },
+            {
+                id: 11,
+                name: "All-Black Stealth Chrono",
+                brand: "Apex Horology",
+                category: "chronograph",
+                price: 12999,
+                originalPrice: 17999,
+                discount: 27,
+                rating: 4.6,
+                reviews: 132,
+                image: "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=600&auto=format&fit=crop",
+                badge: "Trending",
+                movement: "Quartz High-Precision Chrono",
+                caseMaterial: "Black Matte Ion-Plated Steel",
+                waterResistance: "100 Meters",
+                glass: "Hardened Mineral Glass",
+                strap: "Matte Silicone Strap",
+                description: "Tactical stealth aesthetic with monochrome dark dial, black hands, and luminescent hour tips for night visibility."
+            },
+            {
+                id: 12,
+                name: "Grand Complication Moonphase",
+                brand: "Vault Grandeur",
+                category: "automatic",
+                price: 39999,
+                originalPrice: 55000,
+                discount: 27,
+                rating: 5.0,
+                reviews: 41,
+                image: "https://images.unsplash.com/photo-1509941943102-10c232535736?w=600&auto=format&fit=crop",
+                badge: "Exclusive",
+                movement: "Automatic Moonphase Movement",
+                caseMaterial: "Polished Stainless Steel",
+                waterResistance: "50 Meters",
+                glass: "Anti-Reflective Sapphire",
+                strap: "Blue Alligator Pattern Leather",
+                description: "Comes equipped with a real-time lunar moonphase disc, date wheel calendar, and power reserve dial."
+            },
+            {
+                id: 13,
+                name: "Elegance Diamond Accent Quartz",
+                brand: "Nordic Horology",
+                category: "classic",
+                price: 11499,
+                originalPrice: 15999,
+                discount: 28,
+                rating: 4.8,
+                reviews: 73,
+                image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=600&auto=format&fit=crop",
+                badge: "New Arrival",
+                movement: "Japanese Precision Quartz",
+                caseMaterial: "Slim Stainless Steel",
+                waterResistance: "30 Meters",
+                glass: "Sapphire Crystal",
+                strap: "Genuine Leather Strap",
+                description: "Slimline 36mm casing with genuine crystal accent at 12 o'clock, built for formal dinner wear and galas."
+            },
+            {
+                id: 14,
+                name: "Aviator Heritage Pilot Chrono",
+                brand: "Apex Horology",
+                category: "chronograph",
+                price: 17499,
+                originalPrice: 23999,
+                discount: 27,
+                rating: 4.7,
+                reviews: 94,
+                image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop",
+                badge: "Pilot Watch",
+                movement: "Mecha-Quartz Hybrid Movement",
+                caseMaterial: "Brushed Steel Case",
+                waterResistance: "100 Meters",
+                glass: "Anti-Glare Sapphire Crystal",
+                strap: "Rivet Studded Leather Strap",
+                description: "Inspired by mid-century aviation meters. Features high-contrast dial markings and flight slide rule converter bezel."
+            },
+            {
+                id: 15,
+                name: "Sapphire Tourbillon Special Edition",
+                brand: "Vault Masterpiece",
+                category: "automatic",
+                price: 69999,
+                originalPrice: 95000,
+                discount: 26,
+                rating: 5.0,
+                reviews: 19,
+                image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&auto=format&fit=crop",
+                badge: "Ultra Luxury",
+                movement: "Tourbillon Manual Wind Mechanism",
+                caseMaterial: "Full Sapphire Crystal Case",
+                waterResistance: "30 Meters",
+                glass: "360 Full Sapphire Case",
+                strap: "Translucent Fluororubber Strap",
+                description: "The pinnacle of modern watchmaking. Translucent full sapphire case revealing the anti-gravity rotating Tourbillon cage."
+            }
+        ];
+
+        let cart = [];
+        let wishlist = [];
+        let activeDiscount = 0;
+        let currentSlide = 0;
+        let slideInterval;
+
+        window.onload = function() {
+            renderProducts(watches);
+            startSlider();
+            loadCartFromStorage();
+            updateCartBadge();
+        };
+
+        function renderProducts(items) {
+            const grid = document.getElementById('product-grid');
+            const noResults = document.getElementById('no-results');
+
+            if (items.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+            noResults.classList.add('hidden');
+
+            grid.innerHTML = items.map(product => {
+                const isWishlisted = wishlist.includes(product.id);
+                return `
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-gold-500/50 transition-all duration-300 flex flex-col group shadow-lg">
+                        <div class="relative overflow-hidden bg-slate-950 aspect-square">
+                            <img src="${product.image}" 
+                                 alt="${product.name}" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x600/1e293b/ffffff?text=${encodeURIComponent(product.name)}'">
+                            
+                            <div class="absolute top-3 left-3 flex flex-col gap-1">
+                                <span class="bg-gold-500 text-slate-950 font-extrabold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider shadow">
+                                    ${product.badge}
+                                </span>
+                                <span class="bg-red-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider shadow">
+                                    ${product.discount}% OFF
+                                </span>
+                            </div>
+
+                            <button onclick="toggleWishlist(${product.id})" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-slate-950/70 backdrop-blur-md text-slate-300 hover:text-red-500 flex items-center justify-center transition-all">
+                                <i class="${isWishlisted ? 'fa-solid text-red-500' : 'fa-regular'} fa-heart"></i>
+                            </button>
+
+                            <button onclick="openQuickView(${product.id})" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-slate-950/80 hover:bg-gold-500 hover:text-slate-950 text-white text-xs font-semibold px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all backdrop-blur-sm flex items-center gap-1.5 whitespace-nowrap">
+                                <i class="fa-solid fa-eye"></i> Quick View
+                            </button>
+                        </div>
+
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                            <div>
+                                <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+                                    <span class="uppercase tracking-wider font-semibold text-gold-400">${product.brand}</span>
+                                    <span class="flex items-center gap-1 text-amber-400 font-bold">
+                                        <i class="fa-solid fa-star text-xs"></i> ${product.rating} (${product.reviews})
+                                    </span>
+                                </div>
+                                <h3 class="font-bold text-slate-100 text-base line-clamp-1 group-hover:text-gold-400 transition-colors">${product.name}</h3>
+                                <p class="text-xs text-slate-400 line-clamp-2 mt-1">${product.description}</p>
+                            </div>
+
+                            <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                                <div>
+                                    <div class="text-xs text-slate-500 line-through">₹${product.originalPrice.toLocaleString('en-IN')}</div>
+                                    <div class="text-lg font-bold text-white">₹${product.price.toLocaleString('en-IN')}</div>
+                                </div>
+
+                                <button onclick="addToCart(${product.id})" class="bg-gold-500 hover:bg-gold-600 text-slate-950 font-bold p-2.5 sm:px-4 sm:py-2 rounded-lg text-xs transition-all flex items-center gap-1.5 shadow">
+                                    <i class="fa-solid fa-cart-plus"></i> <span class="hidden sm:inline">Add To Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function applyFilters() {
+            const category = document.getElementById('category-filter').value;
+            const sort = document.getElementById('sort-filter').value;
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+
+            let filtered = watches.filter(item => {
+                const matchesCat = category === 'all' || item.category === category;
+                const matchesSearch = item.name.toLowerCase().includes(query) || 
+                                      item.brand.toLowerCase().includes(query) || 
+                                      item.description.toLowerCase().includes(query);
+                return matchesCat && matchesSearch;
+            });
+
+            if (sort === 'low-high') {
+                filtered.sort((a, b) => a.price - b.price);
+            } else if (sort === 'high-low') {
+                filtered.sort((a, b) => b.price - a.price);
+            } else if (sort === 'discount') {
+                filtered.sort((a, b) => b.discount - a.discount);
+            } else if (sort === 'rating') {
+                filtered.sort((a, b) => b.rating - a.rating);
+            }
+
+            renderProducts(filtered);
+        }
+
+        function handleSearch() {
+            applyFilters();
+        }
+
+        function filterCategory(cat) {
+            document.getElementById('category-filter').value = cat;
+            applyFilters();
+        }
+
+        function resetFilters() {
+            document.getElementById('category-filter').value = 'all';
+            document.getElementById('sort-filter').value = 'featured';
+            document.getElementById('search-input').value = '';
+            renderProducts(watches);
+        }
+
+        function startSlider() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slide-item');
+            const dots = document.querySelectorAll('.slide-dot');
+
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none');
+                    slide.classList.add('opacity-100');
+                } else {
+                    slide.classList.remove('opacity-100');
+                    slide.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.className = "slide-dot w-8 h-2 rounded-full bg-gold-400 transition-all";
+                } else {
+                    dot.className = "slide-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-slate-400 transition-all";
+                }
+            });
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % 3;
+            showSlide(next);
+        }
+
+        function prevSlide() {
+            let prev = (currentSlide - 1 + 3) % 3;
+            showSlide(prev);
+        }
+
+        function goToSlide(index) {
+            clearInterval(slideInterval);
+            showSlide(index);
+            startSlider();
+        }
+
+        function addToCart(productId, qty = 1) {
+            const product = watches.find(p => p.id === productId);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.quantity += qty;
+            } else {
+                cart.push({ ...product, quantity: qty });
+            }
+
+            saveCartToStorage();
+            updateCartBadge();
+            renderCartDrawer();
+            showToast(`Added "${product.name}" to cart!`);
+        }
+
+        function updateQuantity(productId, change) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+
+            item.quantity += change;
+            if (item.quantity <= 0) {
+                cart = cart.filter(i => i.id !== productId);
+            }
+
+            saveCartToStorage();
+            updateCartBadge();
+            renderCartDrawer();
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(i => i.id !== productId);
+            saveCartToStorage();
+            updateCartBadge();
+            renderCartDrawer();
+            showToast("Item removed from cart.");
+        }
+
+        function renderCartDrawer() {
+            const container = document.getElementById('cart-items-container');
+            
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-slate-500">
+                        <i class="fa-solid fa-bag-shopping text-5xl mb-3 opacity-40"></i>
+                        <p class="text-sm font-medium">Your cart is empty.</p>
+                        <p class="text-xs mt-1">Explore our wristwatch collection to add items!</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = cart.map(item => `
+                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center gap-3">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-lg bg-slate-900 shrink-0">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="text-xs font-bold text-white truncate">${item.name}</h4>
+                            <p class="text-[10px] text-gold-400 mt-0.5">₹${item.price.toLocaleString('en-IN')}</p>
+                            
+                            <div class="flex items-center gap-2 mt-2">
+                                <button onclick="updateQuantity(${item.id}, -1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-xs">-</button>
+                                <span class="text-xs font-bold text-white">${item.quantity}</span>
+                                <button onclick="updateQuantity(${item.id}, 1)" class="w-5 h-5 rounded bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-xs">+</button>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${item.id})" class="text-slate-500 hover:text-red-400 p-1">
+                            <i class="fa-solid fa-trash-can text-sm"></i>
+                        </button>
+                    </div>
+                `).join('');
+            }
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const discountAmount = Math.round(subtotal * (activeDiscount / 100));
+            const total = Math.max(0, subtotal - discountAmount);
+
+            document.getElementById('cart-subtotal').innerText = `₹${subtotal.toLocaleString('en-IN')}`;
+            document.getElementById('cart-discount').innerText = `- ₹${discountAmount.toLocaleString('en-IN')}`;
+            document.getElementById('cart-total').innerText = `₹${total.toLocaleString('en-IN')}`;
+        }
+
+        function updateCartBadge() {
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById('cart-badge');
+            badge.innerText = count;
+        }
+
+        function applyCoupon() {
+            const input = document.getElementById('coupon-input').value.trim().toUpperCase();
+            const msg = document.getElementById('coupon-message');
+
+            if (input === 'TIME10') {
+                activeDiscount = 10;
+                msg.className = "text-xs text-emerald-400 font-semibold block";
+                msg.innerText = "Coupon applied! 10% Extra Discount unlocked.";
+            } else if (input === 'CHRONO20') {
+                activeDiscount = 20;
+                msg.className = "text-xs text-emerald-400 font-semibold block";
+                msg.innerText = "VIP Coupon applied! 20% Extra Discount unlocked.";
+            } else {
+                activeDiscount = 0;
+                msg.className = "text-xs text-red-400 font-semibold block";
+                msg.innerText = "Invalid coupon code.";
+            }
+            renderCartDrawer();
+        }
+
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+            if (!drawer.classList.contains('hidden')) {
+                renderCartDrawer();
+            }
+        }
+
+        function toggleWishlist(id) {
+            if (wishlist.includes(id)) {
+                wishlist = wishlist.filter(item => item !== id);
+                showToast("Removed from Wishlist.");
+            } else {
+                wishlist.push(id);
+                showToast("Saved to Wishlist!");
+            }
+            document.getElementById('wishlist-badge').innerText = wishlist.length;
+            document.getElementById('wishlist-badge').classList.toggle('hidden', wishlist.length === 0);
+            applyFilters();
+            renderWishlistModal();
+        }
+
+        function toggleWishlistModal() {
+            const modal = document.getElementById('wishlist-modal');
+            modal.classList.toggle('hidden');
+            renderWishlistModal();
+        }
+
+        function renderWishlistModal() {
+            const container = document.getElementById('wishlist-items-container');
+            const items = watches.filter(w => wishlist.includes(w.id));
+
+            if (items.length === 0) {
+                container.innerHTML = `<p class="text-center text-slate-500 text-sm py-8">Your wishlist is currently empty.</p>`;
+                return;
+            }
+
+            container.innerHTML = items.map(w => `
+                <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between gap-3">
+                    <div class="flex items-center gap-3">
+                        <img src="${w.image}" class="w-12 h-12 object-cover rounded">
+                        <div>
+                            <h4 class="text-xs font-bold text-white">${w.name}</h4>
+                            <p class="text-xs text-gold-400">₹${w.price.toLocaleString('en-IN')}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="addToCart(${w.id}); toggleWishlistModal();" class="bg-gold-500 text-slate-950 text-xs font-bold px-3 py-1.5 rounded">
+                            Add to Cart
+                        </button>
+                        <button onclick="toggleWishlist(${w.id})" class="text-slate-500 hover:text-red-400 p-1">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openQuickView(id) {
+            const product = watches.find(w => w.id === id);
+            if (!product) return;
+
+            const modalContent = document.getElementById('quickview-content');
+            modalContent.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-slate-950 rounded-xl overflow-hidden border border-slate-800">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-80 sm:h-96 object-cover" onerror="this.src='https://placehold.co/600x600/1e293b/ffffff?text=${encodeURIComponent(product.name)}'">
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-gold-400 text-xs font-bold uppercase tracking-widest">${product.brand}</span>
+                            <h2 class="text-2xl font-serif font-bold text-white mt-1">${product.name}</h2>
+                            <div class="flex items-center gap-2 mt-2">
+                                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-2 py-0.5 rounded font-semibold">In Stock</span>
+                                <span class="text-amber-400 text-xs font-bold"><i class="fa-solid fa-star"></i> ${product.rating} (${product.reviews} reviews)</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-baseline gap-3 border-y border-slate-800 py-3">
+                            <span class="text-3xl font-bold text-white">₹${product.price.toLocaleString('en-IN')}</span>
+                            <span class="text-sm text-slate-500 line-through">₹${product.originalPrice.toLocaleString('en-IN')}</span>
+                            <span class="bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">${product.discount}% OFF</span>
+                        </div>
+
+                        <p class="text-slate-300 text-xs leading-relaxed">${product.description}</p>
+
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2 text-xs">
+                            <h4 class="font-bold text-gold-400 uppercase tracking-wider text-[11px] mb-2">Technical Specifications</h4>
+                            <div class="grid grid-cols-2 gap-2 text-slate-300">
+                                <div><span class="text-slate-500">Movement:</span> ${product.movement}</div>
+                                <div><span class="text-slate-500">Case Material:</span> ${product.caseMaterial}</div>
+                                <div><span class="text-slate-500">Glass:</span> ${product.glass}</div>
+                                <div><span class="text-slate-500">Water Proof:</span> ${product.waterResistance}</div>
+                                <div><span class="text-slate-500">Strap:</span> ${product.strap}</div>
+                                <div><span class="text-slate-500">Warranty:</span> 2 Years International</div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 flex items-center gap-3">
+                            <button onclick="addToCart(${product.id}); closeQuickView();" class="flex-1 bg-gold-500 hover:bg-gold-600 text-slate-950 font-bold py-3 rounded-lg text-sm transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i> Add To Cart
+                            </button>
+                            <button onclick="toggleWishlist(${product.id})" class="p-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('quickview-modal').classList.remove('hidden');
+        }
+
+        function closeQuickView() {
+            document.getElementById('quickview-modal').classList.add('hidden');
+        }
+
+        function openCheckoutModal() {
+            if (cart.length === 0) {
+                showToast("Your cart is empty!", true);
+                return;
+            }
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const discountAmount = Math.round(subtotal * (activeDiscount / 100));
+            const total = Math.max(0, subtotal - discountAmount);
+
+            document.getElementById('checkout-final-price').innerText = `₹${total.toLocaleString('en-IN')}`;
+            toggleCartDrawer();
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function handleOrderSubmit(e) {
+            e.preventDefault();
+            closeCheckoutModal();
+
+            const randomID = '#CV-' + Math.floor(10000 + Math.random() * 90000);
+            document.getElementById('order-id').innerText = randomID;
+
+            cart = [];
+            saveCartToStorage();
+            updateCartBadge();
+
+            document.getElementById('success-modal').classList.remove('hidden');
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast("Thank you! Our concierge will contact you shortly.");
+            e.target.reset();
+        }
+
+        function handleSubscribe() {
+            showToast("Subscribed! Use code VIP10 for extra discounts.");
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMsg.innerText = message;
+            toastIcon.className = isError ? "fa-solid fa-circle-xmark text-red-400 text-lg" : "fa-solid fa-circle-check text-gold-400 text-lg";
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        function saveCartToStorage() {
+            try {
+                localStorage.setItem('chrono_vault_cart', JSON.stringify(cart));
+            } catch (e) {}
+        }
+
+        function loadCartFromStorage() {
+            try {
+                const saved = localStorage.getItem('chrono_vault_cart');
+                if (saved) cart = JSON.parse(saved);
+            } catch (e) {}
+        }
+    </script>
+</body>
+</html>
